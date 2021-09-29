@@ -18,10 +18,10 @@ const App: () => Node = () => {
   return (
     <SafeAreaView>
       <HomeScreen />
-      <View style={styles.sectionContainer}>
+      {/* <View style={styles.sectionContainer}>
         <TitleTest />
         <ContentTest />
-      </View>
+      </View> */}
     </SafeAreaView>
   );
 };
