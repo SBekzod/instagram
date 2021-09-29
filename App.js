@@ -18,20 +18,9 @@ const App: () => Node = () => {
   return (
     <SafeAreaView>
       <HomeScreen />
-      {/* <View style={styles.sectionContainer}>
-        <TitleTest />
-        <ContentTest />
-      </View> */}
     </SafeAreaView>
   );
 };
 
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    flexDirection: 'column',
-    padding: 20,
-  },
-});
 
 export default App;
