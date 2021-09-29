@@ -1,14 +1,11 @@
-import React from "react";
-import { Image, View } from "react-native";
-import styles from "./styles";
+import React from 'react';
+import {Image, View} from 'react-native';
+import styles from './styles';
 
-const ProfilePicture = ({ uri }) => {
+const ProfilePicture = ({uri}) => {
   return (
     <View style={styles.container}>
-      <Image
-        source={{ uri: uri }}
-        style={styles.image}
-      />
+      <Image source={{uri: uri}} style={styles.image} />
     </View>
   );
 };
