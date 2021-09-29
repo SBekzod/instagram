@@ -6,7 +6,7 @@ const HomeScreen = () => {
   return (
     <React.Fragment>
       <Text>Hello World</Text>
-      <ProfilePicture />
+      <ProfilePicture uri="https://i.ibb.co/TgdzD7H/8.jpg"/>
     </React.Fragment>
   );
 };
