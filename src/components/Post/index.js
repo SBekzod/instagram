@@ -6,7 +6,7 @@ import Footer from './components/footer';
 
 const Post = ({post: user}) => {
   return (
-    <View style={{margin: 20}}>
+    <View >
       <Header imageUri={user.imageUri} name={user.name}/>
       <Body />
       <Footer />
