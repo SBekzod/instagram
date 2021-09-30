@@ -4,14 +4,17 @@ import Header from './components/header';
 import Body from './components/body';
 import Footer from './components/footer';
 
-const Post = ({post: user}) => {
+const Post = ({post}) => {
   return (
     <View >
-      <Header imageUri={user.imageUri} name={user.name}/>
-      <Body />
+      <Header imageUri={post.user.imageUri} name={post.user.name}/>
+      <Body imageUri={post.bodyImageUri} />
       <Footer />
     </View>
   );
 };
 
 export default Post;
+
+
+
