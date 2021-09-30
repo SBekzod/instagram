@@ -4,10 +4,10 @@ import Header from './components/header';
 import Body from './components/body';
 import Footer from './components/footer';
 
-const Post = () => {
+const Post = ({post: user}) => {
   return (
-    <View>
-      <Header />
+    <View style={{margin: 20}}>
+      <Header imageUri={user.imageUri} name={user.name}/>
       <Body />
       <Footer />
     </View>

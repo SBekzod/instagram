@@ -1,8 +1,14 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {View, Text} from 'react-native';
+import ProfilePicture from '../../../ProfilePicture';
 
-const Header = () => {
-  return <Text>Header part</Text>;
+const Header = ({imageUri, name}) => {
+  return (
+    <View>
+      <ProfilePicture uri={imageUri} />
+      <Text>{name}</Text>
+    </View>
+  );
 };
 
 export default Header;
