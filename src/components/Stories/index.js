@@ -1,6 +1,7 @@
 import React from 'react';
-import {View, FlatList} from 'react-native';
+import {FlatList} from 'react-native';
 import Story from '../Story';
+import styles from './styles';
 
 const data = [
   {
@@ -10,10 +11,6 @@ const data = [
   {
     imageUri: 'https://i.ibb.co/HPhFLht/rachel.jpg',
     name: 'Rachel',
-  },
-  {
-    imageUri: 'https://i.ibb.co/TgdzD7H/8.jpg',
-    name: 'Milana',
   },
   {
     imageUri: 'https://i.ibb.co/s2pF3vk/10.jpg',
@@ -36,6 +33,7 @@ const data = [
 const Stories = () => {
   return (
     <FlatList
+      style={styles.container}
       data={data}
       keyExtractor={({name}) => name}
       horizontal
@@ -45,15 +43,6 @@ const Stories = () => {
       showsHorizontalScrollIndicator={false}
     />
   );
-  // return (<View>
-  //   {data.map(ele => {
-  //     return (
-  //       <React.Fragment>
-  //         <Story imageUri={ele.imageUri} name={ele.name} />
-  //       </React.Fragment>
-  //     );
-  //   })}
-  // </View>);
 };
 
 export default Stories;

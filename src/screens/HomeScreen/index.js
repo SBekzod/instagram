@@ -7,7 +7,10 @@ const post = {
     imageUri: 'https://i.ibb.co/vBrVN65/5.jpg',
     name: 'Merry',
   },
-  bodyImageUri: 'https://i.ibb.co/xq3ZT47/body.jpg'
+  bodyImageUri: 'https://i.ibb.co/xq3ZT47/body.jpg',
+  caption: "Beautifull City of New York",
+  likedCounts: 123000,
+  postedAt: "6 minutes ago"
 };
 
 const HomeScreen = () => {

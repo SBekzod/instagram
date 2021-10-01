@@ -6,15 +6,16 @@ import Footer from './components/footer';
 
 const Post = ({post}) => {
   return (
-    <View >
-      <Header imageUri={post.user.imageUri} name={post.user.name}/>
+    <View>
+      <Header imageUri={post.user.imageUri} name={post.user.name} />
       <Body imageUri={post.bodyImageUri} />
-      <Footer />
+      <Footer
+        caption={post.caption}
+        likedCounts={post.likedCounts}
+        postedAt={post.postedAt}
+      />
     </View>
   );
 };
 
 export default Post;
-
-
-
