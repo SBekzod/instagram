@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableWithoutFeedback} from 'react-native';
 import styles from './styles';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -10,7 +10,16 @@ const Footer = ({caption, likedCounts, postedAt}) => {
     <React.Fragment style={styles.mainContainer}>
       <View style={styles.groupFooterHeader}>
         <View style={styles.groupRight}>
-          <Icon name={isLiked ? "heart" : "heart-o"} size={17} color={'#545454'} onPress={() => {toggleLikeState(!isLiked)}} />
+          <TouchableWithoutFeedback
+            onPress={() => {
+              toggleLikeState(!isLiked);
+            }}>
+            <Icon
+              name={isLiked ? 'heart' : 'heart-o'}
+              size={17}
+              color={'#545454'}
+            />
+          </TouchableWithoutFeedback>
           <Icon name="comment-o" size={17} color={'#545454'} />
           <Icon name="send-o" size={17} color={'#545454'} />
         </View>
