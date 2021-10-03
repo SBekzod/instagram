@@ -1,6 +1,7 @@
 import React from 'react';
 import {FlatList} from 'react-native';
 import Post from '../Post';
+import Stories from '../Stories';
 
 const data = [
   {
@@ -38,9 +39,10 @@ const data = [
 const Feed = () => {
   return (
     <FlatList
+      ListHeaderComponent={Stories}
       data={data}
       keyExtractor={({name}) => name}
-      horizontal
+      vertical
       renderItem={({item}) => <Post post={item} />}
       showsHorizontalScrollIndicator={false}
     />
