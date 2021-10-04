@@ -5,6 +5,7 @@ import Stories from '../Stories';
 
 const data = [
   {
+    id: 1,
     user: {
       imageUri: 'https://i.ibb.co/vBrVN65/5.jpg',
       name: 'Merry',
@@ -15,6 +16,7 @@ const data = [
     postedAt: '6 minutes ago',
   },
   {
+    id: 2,
     user: {
       imageUri: 'https://i.ibb.co/HPhFLht/rachel.jpg',
       name: 'Rachel',
@@ -25,6 +27,7 @@ const data = [
     postedAt: '6 minutes ago',
   },
   {
+    id: 3,
     user: {
       imageUri: 'https://i.ibb.co/pd9BNrw/quokka.jpg',
       name: 'Jose',
@@ -41,7 +44,7 @@ const Feed = () => {
     <FlatList
       ListHeaderComponent={Stories}
       data={data}
-      keyExtractor={({name}) => name}
+      keyExtractor={({id}) => id}
       vertical
       renderItem={({item}) => <Post post={item} />}
       showsHorizontalScrollIndicator={false}

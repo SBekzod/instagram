@@ -8,17 +8,20 @@
 
 import React from 'react';
 import type {Node} from 'react';
-import {SafeAreaView, StyleSheet, View} from 'react-native';
+import {SafeAreaView, StyleSheet, View, StatusBar} from 'react-native';
 import HomeScreen from './src/screens/HomeScreen';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {NavigationContainer} from '@react-navigation/native';
 
 const App: () => Node = () => {
   return (
-    <SafeAreaView>
-      <HomeScreen />
-    </SafeAreaView>
+    <NavigationContainer>
+      <StatusBar barStyle="dark-content" />
+      <SafeAreaView>
+        <HomeScreen />
+      </SafeAreaView>
+    </NavigationContainer>
   );
 };
-
 
 export default App;
