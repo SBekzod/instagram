@@ -8,11 +8,20 @@
 
 import React from 'react';
 import type {Node} from 'react';
-import {SafeAreaView, StyleSheet, View, StatusBar} from 'react-native';
+import {
+  SafeAreaView,
+  StyleSheet,
+  View,
+  StatusBar,
+  Image,
+  Text,
+} from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createStackNavigator} from '@react-navigation/stack';
+
 import HomeScreen from './src/screens/HomeScreen';
 import DiscoveryScreen from './src/screens/DiscoveryScreen';
 import PostScreen from './src/screens/PostScreen';
@@ -21,8 +30,42 @@ import ProfileScreen from './src/screens/ProfileScreen';
 import SettingsScreen from './src/screens/SettingsScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import IconAwesome from 'react-native-vector-icons/FontAwesome';
+import logo from './src/assets/images/insta.png';
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
+
+const HomeStackScreen = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="HomeStack"
+        component={HomeScreen}
+        options={{
+          title: 'Instagram',
+          headerLeftContainerStyle: {
+            marginLeft: 15,
+          },
+          headerTitleContainerStyle: {
+            marginLeft: 100,
+          },
+          headerRightContainerStyle: {
+            marginRight: 15,
+          },
+          headerLeft: () => (
+            <Ionicons name={'camera-outline'} size={25} color={'#000'} />
+          ),
+          headerTitle: () => (
+            <Image source={logo} resizeMode="contain" style={{width: 100}} />
+          ), 
+          headerRight: () => (
+            <IconAwesome name={'send-o'} size={25} color={'#000'} />
+          )
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
 
 const App: () => Node = () => {
   return (
@@ -39,7 +82,9 @@ const App: () => Node = () => {
             } else if (route.name === 'Post') {
               icon_name = focused ? 'add-circle' : 'add-circle-outline';
             } else if (route.name === 'Notification') {
-              icon_name = focused ? 'md-notifications-sharp' : 'md-notifications-outline';
+              icon_name = focused
+                ? 'md-notifications-sharp'
+                : 'md-notifications-outline';
             } else if (route.name === 'Profile') {
               icon_name = focused ? 'user-circle' : 'user-circle-o';
             } else {
@@ -55,7 +100,7 @@ const App: () => Node = () => {
           tabBarActiveTintColor: 'tomato',
           tabBarShowLabel: false,
         })}>
-        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Home" component={HomeStackScreen} />
         <Tab.Screen name="Discovery" component={DiscoveryScreen} />
         <Tab.Screen name="Post" component={PostScreen} />
         <Tab.Screen name="Notification" component={NotificationScreen} />
