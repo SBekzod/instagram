@@ -15,7 +15,7 @@ const Footer = ({caption, likedCounts, postedAt}) => {
     let amount = isLiked ? -1 : 1;
     setLikesCount(likesCounts + amount);
     toggleLikeState(!isLiked);
-  }
+  } 
 
   return (
     <View style={styles.mainContainer}>
