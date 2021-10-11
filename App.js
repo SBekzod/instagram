@@ -43,11 +43,9 @@ const HomeStackScreen = () => {
         component={HomeScreen}
         options={{
           title: 'Instagram',
+          headerTitleAlign: 'center',
           headerLeftContainerStyle: {
             paddingLeft: 15,
-          },
-          headerTitleContainerStyle: {
-            paddingLeft: 100,
           },
           headerRightContainerStyle: {
             paddingRight: 15,
