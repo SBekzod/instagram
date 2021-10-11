@@ -44,14 +44,14 @@ const HomeStackScreen = () => {
         options={{
           title: 'Instagram',
           headerLeftContainerStyle: {
-            marginLeft: 15,
+            paddingLeft: 15,
           },
           headerTitleContainerStyle: {
-            marginLeft: 100,
+            paddingLeft: 100,
           },
           headerRightContainerStyle: {
-            marginRight: 15,
-          },
+            paddingRight: 15,
+          }, 
           headerLeft: () => (
             <Ionicons name={'camera-outline'} size={25} color={'#000'} />
           ),
