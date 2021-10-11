@@ -15,6 +15,7 @@ import {
   StatusBar,
   Image,
   Text,
+  Button,
 } from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
@@ -35,7 +36,21 @@ import logo from './src/assets/images/insta.png';
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
-const HomeStackScreen = () => {
+function SendMessageScreen() {
+  return (
+    <View
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'brown',
+      }}>
+      <Text>Here you should write your message</Text>
+    </View>
+  );
+}
+
+const HomeStackScreen = ({navigation}) => {
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -45,20 +60,31 @@ const HomeStackScreen = () => {
           title: 'Instagram',
           headerTitleAlign: 'center',
           headerLeftContainerStyle: {
-            paddingLeft: 15,
+            paddingLeft: 15,  
           },
           headerRightContainerStyle: {
             paddingRight: 15,
-          }, 
+          },
           headerLeft: () => (
-            <Ionicons name={'camera-outline'} size={25} color={'#000'} />
+            <IconAwesome name={'camera'} size={25} color={'#000'}/>
           ),
           headerTitle: () => (
             <Image source={logo} resizeMode="contain" style={{width: 100}} />
-          ), 
+          ),
           headerRight: () => (
-            <IconAwesome name={'send-o'} size={25} color={'#000'} />
-          )
+            <IconAwesome name={'send-o'} size={25} color={'#000'}  onPress={() => navigation.navigate('SendMessageStackScreen')} />
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="SendMessageStackScreen"
+        component={SendMessageScreen}
+        options={{
+          title: '',
+          headerTitleAlign: 'center',
+          headerTitle: () => (
+            <Text>Sent Message</Text>
+          ),
         }}
       />
     </Stack.Navigator>
